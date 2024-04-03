@@ -1,4 +1,4 @@
-© This respository is owned my Saiganesh Angadi under license of MIT ©
+© This respository is owned by Saiganesh Angadi under license of MIT ©
 ## Terms and Conditions
 
 1. By accessing and using this repository, you agree to be bound by the following terms and conditions.
