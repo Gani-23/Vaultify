@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Response, request, jsonify
+from flask import Flask, render_template, Response, request, jsonify, redirect, url_for
 from werkzeug.utils import secure_filename
 import configparser
 import psutil
@@ -54,7 +54,9 @@ def upload_config():
         return {'message': 'No config file provided'}, 400
 
     filename = secure_filename(config_file.filename)
-    filepath = os.path.join(os.getcwd(), filename)
+    folder_path = os.path.join(os.getcwd(), 'uploadable')
+    os.makedirs(folder_path, exist_ok=True)
+    filepath = os.path.join(folder_path, filename)
     config_file.save(filepath)
 
     config = configparser.ConfigParser()
@@ -64,6 +66,14 @@ def upload_config():
         return {'message': str(e)}, 400
 
     config_dict = {s: dict(config.items(s)) for s in config.sections()}
+    json_data = json.dumps(config_dict)
+
+    private_folder = os.path.join(os.getcwd(), 'private')
+    os.makedirs(private_folder, exist_ok=True)
+    json_file = os.path.join(private_folder, 'saved.json')
+    with open(json_file, 'w') as f:  
+        f.write(json_data + '\n')
+
     return jsonify(config_dict)
 
 if __name__ == '__main__':

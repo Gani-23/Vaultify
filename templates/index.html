@@ -10,47 +10,38 @@
 
 </head>
 
-<body class="bg-gray-100"></body>
-<div style="position: fixed; top: 10px; right: 10px; background-color: black; color: white; padding: 10px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
-    <div id="cpu_percent" class="text-center text-2xl mt-4">CPU 0%</div>
-</div>
-    
-
-<div>
-    
-</div>
-
-<h1 class="text-4xl font-bold text-center mt-8">Password Validator</h1>
-
-<form action="/check_password" method="post" class="mt-8 mx-auto max-w-sm">
-    <label for="password" class="block mb-2">Password:</label>
-    <input type="password" id="password" name="password"
-        class="border border-gray-300 rounded-md px-4 py-2 w-full mb-4">
-    {% if message %}
-    <div class="alert alert-info justify-center" role="alert">
-        {{ message }}
+<body class="bg-gray-100">
+    <div style="position: fixed; top: 10px; right: 10px; background-color: black; color: white; padding: 10px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); cursor: move;"
+        draggable="true" ondragstart="drag(event)">
+        <div id="cpu_percent" class="text-center text-2xl mt-4">CPU 0%</div>
     </div>
-    {% endif %}
-    <input type="submit" value="Submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-</form>
+    <h1 class="text-4xl font-bold text-center mt-8">Password Validator</h1>
 
-
-<h1 class="text-4xl font-bold text-center mt-8">Config Parser</h1>
-
-
-<div class="mt-8 mx-auto max-w-sm">
-
-    <form action="/upload_config" method="post" enctype="multipart/form-data">
-
-        <label for="config">Upload Config File:</label><br>
-        <input type="file" id="config" name="config" class="border border-gray-300 rounded-md px-4 py-2 w-full mb-4"><br>
-        <input type="submit" value="Submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+    <form action="/check_password" method="post" class="mt-8 mx-auto max-w-sm">
+        <label for="password" class="block mb-2">Password:</label>
+        <input type="password" id="password" name="password"
+            class="border border-gray-300 rounded-md px-4 py-2 w-full mb-4">
+        {% if message %}
+        <div class="alert alert-info justify-center" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}
+        <input type="submit" value="Submit"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
     </form>
-</div>
+    <h1 class="text-4xl font-bold text-center mt-8">Config Parser</h1>
 
+    <div class="mt-8 mx-auto max-w-sm">
 
+        <form action="/upload_config" method="post" enctype="multipart/form-data">
 
-
+            <label for="config">Upload Config File:</label><br>
+            <input type="file" id="config" name="config"
+                class="border border-gray-300 rounded-md px-4 py-2 w-full mb-4"><br>
+            <input type="submit" value="Submit"
+                class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+        </form>
+    </div>
 </body>
 
 </html>
