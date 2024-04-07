@@ -18,7 +18,7 @@ def backup_files(source_dir, destination_dir):
         source_file = os.path.join(source_dir, file)
         timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
         destination_file = os.path.join(destination_dir, f"{file}_{timestamp}")
-
+## works
         if os.path.exists(destination_file):
             if filecmp.cmp(source_file, destination_file) and os.path.getmtime(source_file) <= os.path.getmtime(destination_file):
                 print(f"Skipping {file} as it already exists and has the same content and a newer modified date.")
