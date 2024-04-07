@@ -7,7 +7,6 @@
 
 3. The owner of this repository shall not be liable for any loss or damage arising from the use of this repository.
 
-4. Unauthorized use of this repository may give rise to a claim for damages and/or be a criminal offense.
 
 5. This repository may include links to other websites. These links are provided for your convenience to provide further information. They do not signify that the owner of this repository endorses the website(s). The owner of this repository has no responsibility for the content of the linked website(s).
 
