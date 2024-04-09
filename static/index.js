@@ -17,10 +17,14 @@ eventSource.onmessage = function(event) {
     }
 };
 
-// Function to remove the alert message after 3 seconds
 setTimeout(function() {
     var alertElement = document.querySelector('.alert');
     if (alertElement) {
         alertElement.remove();
     }
 }, 3000);
+
+function showSuccessNotification() {
+
+    alert("Sucessfully uploaded to the server!, you'd be rediredted to output page shortly. if empty please make sure to add config properly");
+}
