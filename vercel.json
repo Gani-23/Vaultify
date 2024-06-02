@@ -5,10 +5,19 @@
             "src": "app.py",
             "use": "@vercel/python"
         }],
+<<<<<<< HEAD
     "routes": [
         {
             "src": "/(.*)",
             "dest": "/app.py"
         }
     ]
+=======
+        "routes": [
+            {
+                "src": "/(.*)",
+                "dest": "/app.py"
+            }
+        ]
+>>>>>>> 9119e9bf5d1ccc0dd297bd2723f5ec48d87adfbc
 }
