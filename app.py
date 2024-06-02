@@ -1,5 +1,6 @@
 from flask import Flask, render_template, Response, request, jsonify, redirect, url_for
 from werkzeug.utils import secure_filename
+import random
 import configparser
 import psutil
 import json
@@ -15,6 +16,15 @@ def index():
 
 @app.route('/cpu_percentage')
 def cpu_percentage():
+    # Mock CPU usage data for demonstration
+    while True:
+        cpu_percent = random.randint(0, 100)
+        data = {'cpu_percent': cpu_percent}
+        yield f"data: {json.dumps(data)}\n\n"
+        time.sleep(1)
+
+#@app.route('/cpu_percentage')
+#def cpu_percentage():
     while True:
         cpu_percent = psutil.cpu_percent(interval=1)
         data = {'cpu_percent': cpu_percent}
